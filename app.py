@@ -29,8 +29,15 @@ def main():
 
     # Titulo do web app
     html_page = """
-    <div style="background-color:blue;padding=80px">
-        <p style='text-align:center;font-size:30px;font-weight:bold;color:white'>Indeed<br>Scrap de Oportunidades Abertas</p>
+    <div style="background-color:blue;padding=30px">
+        <p style='text-align:center;font-size:30px;font-weight:bold;color:white'>Indeed</p>
+    </div>
+              """
+    st.markdown(html_page, unsafe_allow_html=True)
+   
+    html_page = """
+    <div style="background-color:white;padding=0px">
+        <p style='text-align:center;font-size:20px;font-weight:bold;color:blue'>Scrap de Oportunidades Abertas</p>
     </div>
               """
     st.markdown(html_page, unsafe_allow_html=True)
@@ -41,6 +48,7 @@ def main():
     aguia3 = Image.open("Images/aguia3.jpg")
     aguia4 = Image.open("Images/aguia4.jpg")
     aguia5 = Image.open("Images/aguia5.jpg")
+    aguias = Image.open("Images/aguias.png")
     scrap  = Image.open("Images/scrap.png")
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
@@ -50,11 +58,12 @@ def main():
 
     if choice == 'Home':
         st.sidebar.image(scrap,caption="", width=300)
-        st.subheader("Selecione o cargo")
-        st.subheader(" - Cientista de Dados")
-        st.subheader(" - Analista de Dados")
-        st.subheader(" - Engenheiro de Machine Learning")
-        st.subheader(" - Engenheiro de Dados")
+        st.image(aguias,caption="", width=700, height=300)
+        #st.subheader("Selecione o cargo")
+        #st.subheader(" - Cientista de Dados")
+        #st.subheader(" - Analista de Dados")
+        #st.subheader(" - Engenheiro de Machine Learning")
+        #st.subheader(" - Engenheiro de Dados")
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
