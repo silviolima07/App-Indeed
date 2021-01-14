@@ -36,8 +36,12 @@ def main():
     st.markdown(html_page, unsafe_allow_html=True)
 
    
-    aguia2 = Image.open("aguia7.jpg")
-    st.sidebar.image(aguia2,caption="", width=200)
+    aguia1 = Image.open("Images/aguia1.jpg")
+    aguia2 = Image.open("Images/aguia2.jpg") 
+    aguia3 = Image.open("Images/aguia3.jpg")
+    aguia4 = Image.open("Images/aguia4.jpg")
+    aguia5 = Image.open("Images/aguia5.jpg")
+    scrap  = Image.open("Images/scrap.png")
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
     file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_machine_learning.csv',
@@ -45,6 +49,7 @@ def main():
     choice = st.sidebar.selectbox("Escolher",activities)
 
     if choice == 'Home':
+        st.sidebar.image(scrap,caption="", width=300)
         st.subheader("Selecione o cargo")
         st.subheader(" - Cientista de Dados")
         st.subheader(" - Analista de Dados")
@@ -52,10 +57,11 @@ def main():
         st.subheader(" - Engenheiro de Dados")
         
     elif choice == activities[1]:
+        st.sidebar.image(aguia1,caption="", width=300)
         df = pd.read_csv(file_csv[0])
         total = str(len(df))
         st.title(activities[1])
-        st.subheader("Total de vagas:"+total)
+        st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
             cargo = activities[1].replace(' ', '_')
@@ -64,10 +70,11 @@ def main():
             st.markdown(tmp_download_link, unsafe_allow_html=True)
         
     elif choice == activities[2]:
+        st.sidebar.image(aguia2,caption="", width=300)
         df = pd.read_csv(file_csv[1])
         total = str(len(df))
         st.title(activities[2])
-        st.subheader("Total de vagas:"+total)
+        st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
             cargo = activities[2].replace(' ', '_')
@@ -76,10 +83,11 @@ def main():
             st.markdown(tmp_download_link, unsafe_allow_html=True)     
    
     elif choice == activities[3]:
+        st.sidebar.image(aguia3,caption="", width=300)
         df = pd.read_csv(file_csv[2])
         total = str(len(df))
         st.title(activities[3])
-        st.subheader("Total de vagas:"+total)
+        st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
             cargo = activities[3].replace(' ', '_')
@@ -88,10 +96,11 @@ def main():
             st.markdown(tmp_download_link, unsafe_allow_html=True)
 
     elif choice == activities[4]:
+        st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(file_csv[3])
         total = str(len(df))
         st.title(activities[4])
-        st.subheader("Total de vagas:"+total)
+        st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
             cargo = activities[4].replace(' ', '_')
@@ -101,9 +110,10 @@ def main():
 
   
     elif choice == 'About':
+        st.sidebar.image(aguia5,caption="", width=400)
         st.subheader("Built with Streamlit")
         st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
-        st.write("Foram pesquisadas as 10 primeiras páginas retornadas apenas.")
+        st.write("As 10 primeiras páginas apenas.")
         st.subheader("by Silvio Lima")
         
         if st.button("Linkedin"):
