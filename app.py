@@ -11,11 +11,6 @@ pd.set_option('precision',2)
 import base64
 
 
-#def my_widget(key):
-#    st.subheader('Hello there!')
-#    clicked = st.button("Click me " + key)
-
-
 def download_link(df, texto1, texto2):
     if isinstance(df,pd.DataFrame):
         object_to_download = df.to_csv(index=False)
@@ -40,20 +35,7 @@ def main():
               """
     st.markdown(html_page, unsafe_allow_html=True)
 
-    
-    # This works in the main area
-    #clicked = my_widget("first")
-
-    # And within an expander
-    #my_expander = st.beta_expander("Expand", expanded=True)
-    #with my_expander:
-    #    clicked = my_widget("second")
-
-    # AND in st.sidebar!
-    #with st.sidebar:
-    #    clicked = my_widget("third")
-    
-    
+   
     aguia2 = Image.open("aguia7.jpg")
     st.sidebar.image(aguia2,caption="", width=200)
 
@@ -133,40 +115,6 @@ def main():
 
        
 
-    #html2_page = """
-    #<div style="background-color:tomato;padding=50px">
-    #    <p style='text-align:center;font-size:40px;font-weight:bold'; font-color: white>Scrap de Oportunidades Abertas</p>
-    #</div>
-    #          """
-    #st.markdown(html2_page, unsafe_allow_html=True)
-
-    # Columns
-
-    #col1, col2 = st.beta_columns(2)
-
-    #aguia1 = Image.open("aguia6.jpg")
-    #col1.header("Original")
-    #col1.image(aguia1, use_column_width=True)
-
-    #grayscale = aguia1.convert('LA')
-    #col2.header("Grayscale")
-    #col2.image(grayscale, use_column_width=False)
-
-    # Table
-    
-    #st.title("Let's create a table!")
-    #for i in range(1, 10):
-    #    cols = st.beta_columns(4)
-    #    cols[0].write(f'{i}')
-    #    cols[1].write(f'{i * i}')
-    #    cols[2].write(f'{i * i * i}')
-    #    cols[3].write('x' * i)
-   
-    
-        
-     
-
-    
    
     
     
