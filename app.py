@@ -36,7 +36,7 @@ def main():
     st.markdown(html_page, unsafe_allow_html=True)
    
     html_page = """
-    <div style="background-color:white;padding=0px">
+    <div style="background-color:white;padding=20px">
         <p style='text-align:center;font-size:20px;font-weight:bold;color:blue'>Scrap de Oportunidades Abertas</p>
     </div>
               """
