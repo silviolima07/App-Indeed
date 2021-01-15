@@ -60,9 +60,9 @@ def main():
     dia = str(now.day)
     mes = str(now.month)
     ano = str(now.year)
-    hora = str(now.hour)
-    hora = int(hora -3)
-    hora = hora
+    hora = now.hour
+    hora = hora -3
+
     minuto = str(00)
     
     if (hora >= 9 and hora < 12):
