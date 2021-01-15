@@ -21,8 +21,6 @@ def download_link(df, texto1, texto2):
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
     
 
-
-
 def main():
 
     """Indeed App """
