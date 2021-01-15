@@ -63,7 +63,7 @@ def main():
     hora = now.hour
     hora = hora -3
 
-    minuto = str(00)
+    minuto = '00'
     
     if (hora >= 9 and hora < 12):
         hora = str(9)
@@ -77,9 +77,11 @@ def main():
         hora = str(18)
 
     data_update = dia+'/'+mes+'/'+ano+' - '+hora+':'+minuto
+    
+    st.write('Última atualizacao: '+ data_update)
 
     if choice == 'Home':
-        st.write('Última atualizacao: '+ data_update)
+        
         st.sidebar.image(scrap,caption="", width=300)
         st.image(aguias,caption="", width=700, height=300)
         #st.subheader("Selecione o cargo")
