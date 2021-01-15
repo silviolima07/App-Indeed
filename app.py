@@ -78,7 +78,8 @@ def main():
 
     data_update = dia+'/'+mes+'/'+ano+' - '+hora+':'+minuto
     
-    st.write('Última atualizacao: '+ data_update)
+    if choice != 'About':
+        st.write('Última atualizacao: '+ data_update)
 
     if choice == 'Home':
         
@@ -147,7 +148,10 @@ def main():
         st.sidebar.image(aguia5,caption="", width=400)
         st.subheader("Built with Streamlit")
         st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
-        st.write("As 10 primeiras páginas apenas.")
+        st.write("A coleta dos dados é feita às 9h, 12h, 15 e 18h")
+        st.write("O scrap para o cargo de Engenheiro de Machine Learning trouxe poucas linhas.")
+        st.write("Para os demais cargos, encontrou mais de 100 vagas, distribuídas em diversas páginas")
+        st.write("Esse app traz as 10 primeiras páginas apenas.")
         st.subheader("by Silvio Lima")
         
         if st.button("Linkedin"):
