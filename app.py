@@ -10,6 +10,7 @@ pd.set_option('precision',2)
 
 import base64
 
+import datetime
 
 def download_link(df, texto1, texto2):
     if isinstance(df,pd.DataFrame):
@@ -54,7 +55,18 @@ def main():
                 'CSV/indeed_Engenheiro_de_dados.csv']
     choice = st.sidebar.selectbox("Escolher",activities)
 
+    # Definir a data da última atualização
+    now = datetime.datetime.now()
+    dia = str(now.day)
+    mes = str(now.month)
+    ano = str(now.year)
+    hora = str(now.hour)
+    minuto = str(now.minute)
+    
+    data_update = dia+'/'+mes+'/'+ano+' - '+hora+':'+minuto
+
     if choice == 'Home':
+        st.write('Dados de atualizacao: '+ data_update)
         st.sidebar.image(scrap,caption="", width=300)
         st.image(aguias,caption="", width=700, height=300)
         #st.subheader("Selecione o cargo")
