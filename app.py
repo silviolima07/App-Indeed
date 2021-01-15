@@ -61,12 +61,25 @@ def main():
     mes = str(now.month)
     ano = str(now.year)
     hora = str(now.hour)
-    minuto = str(now.minute)
+    hora = int(hora -3)
+    hora = hora
+    minuto = str(00)
     
+    if (hora >= 9 and hora < 12):
+        hora = str(9)
+    
+    elif (hora >= 12 and hora < 15):
+        hora = str(12)
+   
+    elif (hora >= 15 and hora < 18):
+        hora = str(15)     
+    else:
+        hora = str(18)
+
     data_update = dia+'/'+mes+'/'+ano+' - '+hora+':'+minuto
 
     if choice == 'Home':
-        st.write('Dados de atualizacao: '+ data_update)
+        st.write('Última atualizacao: '+ data_update)
         st.sidebar.image(scrap,caption="", width=300)
         st.image(aguias,caption="", width=700, height=300)
         #st.subheader("Selecione o cargo")
