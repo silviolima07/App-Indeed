@@ -10,7 +10,6 @@ pd.set_option('precision',2)
 
 import base64
 
-import datetime
 
 def download_link(df, texto1, texto2):
     if isinstance(df,pd.DataFrame):
@@ -56,28 +55,11 @@ def main():
     choice = st.sidebar.selectbox("Escolher",activities)
 
     # Definir a data da última atualização
-    now = datetime.datetime.now()
-    dia = str(now.day)
-    mes = str(now.month)
-    ano = str(now.year)
-    hora = now.hour
-    hora = hora -3
 
-    minuto = '00'
-    
-    if (hora >= 9 and hora < 12):
-        hora = str(9)
-    
-    elif (hora >= 12 and hora < 15):
-        hora = str(12)
+
+    f = open("update", "r")
+    data_update = f.read()
    
-    elif (hora >= 15 and hora < 18):
-        hora = str(15)     
-    else:
-        hora = str(18)
-
-    data_update = dia+'/'+mes+'/'+ano+' - '+hora+':'+minuto
-    
     if choice != 'About':
         st.write('Última atualizacao: '+ data_update)
 
