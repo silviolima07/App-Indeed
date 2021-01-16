@@ -48,7 +48,7 @@ def main():
     aguia5 = Image.open("Images/aguia5.jpg")
     aguias = Image.open("Images/aguias.png")
     scrap  = Image.open("Images/scrap.png")
-    logo   = Image.open("Images/logo_portfolio.png")
+    logo   = Image.open("Images/logo_portfolio2.png")
 
     st.sidebar.image(logo,caption="", width=300)
 
