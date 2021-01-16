@@ -36,7 +36,7 @@ def main():
    
     html_page = """
     <div style="background-color:white;padding=20px">
-        <p style='text-align:center;font-size:20px;font-weight:bold;color:blue'>Scrap de Oportunidades Abertas</p>
+        <p style='text-align:center;font-size:20px;font-weight:bold;color:blue'>Scrap de Oportunidades Abertas em Data Science</p>
     </div>
               """
     st.markdown(html_page, unsafe_allow_html=True)
@@ -148,10 +148,11 @@ def main():
         st.sidebar.image(aguia5,caption="", width=400)
         st.subheader("Built with Streamlit")
         st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
-        st.markdown("A coleta dos dados é feita às 9h, 12h, 15 e 18h")
+        st.markdown("A coleta dos dados é feita às 9h, 12h, 15h e 18h")
         st.write("Nestes horários, via crontab scripts realizam o scrap e atualização do app.")
+        st.write("Foram definidos 4 cargos apenas para validar o processo.")
         st.write("O scrap para o cargo de Engenheiro de Machine Learning trouxe poucas linhas.")
-        st.write("Para os demais cargos, encontrou mais de 100 vagas, distribuídas em diversas páginas.")
+        st.write("Para os demais cargos, foram encontradas mais de 100 vagas, distribuídas em diversas páginas.")
         st.write("Esse app traz as 10 primeiras páginas apenas.")
         st.subheader("by Silvio Lima")
         
