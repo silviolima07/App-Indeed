@@ -48,6 +48,9 @@ def main():
     aguia5 = Image.open("Images/aguia5.jpg")
     aguias = Image.open("Images/aguias.png")
     scrap  = Image.open("Images/scrap.png")
+    logo   = Image.open("Images/logo_portfolio.png")
+
+    st.sidebar.image(logo,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
     file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_machine_learning.csv',
