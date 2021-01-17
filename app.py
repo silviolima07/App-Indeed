@@ -45,12 +45,11 @@ def main():
     aguia2 = Image.open("Images/aguia2.jpg") 
     aguia3 = Image.open("Images/aguia3.jpg")
     aguia4 = Image.open("Images/aguia4.jpg")
-    aguia5 = Image.open("Images/aguia5.jpg")
+    profile = Image.open("Images/profile.jpg")
     aguias = Image.open("Images/aguias.png")
-    scrap  = Image.open("Images/scrap.png")
-    logo   = Image.open("Images/logo_portfolio2.png")
+    scrap  = Image.open("Images/webscrap.jpeg")
 
-    st.sidebar.image(logo,caption="", width=300)
+    st.sidebar.image(scrap,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
     file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_machine_learning.csv',
@@ -68,7 +67,6 @@ def main():
 
     if choice == 'Home':
         
-        st.sidebar.image(scrap,caption="", width=300)
         st.image(aguias,caption="", width=700, height=300)
         #st.subheader("Selecione o cargo")
         #st.subheader(" - Cientista de Dados")
@@ -130,7 +128,7 @@ def main():
 
   
     elif choice == 'About':
-        st.sidebar.image(aguia5,caption="", width=400)
+        st.sidebar.image(profile,caption="", width=300, height= 200)
         st.subheader("Built with Streamlit")
         st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
         st.markdown("A coleta dos dados é feita às 9h, 12h, 15h e 18h")
