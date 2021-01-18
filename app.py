@@ -41,12 +41,10 @@ def main():
     st.markdown(html_page, unsafe_allow_html=True)
 
    
-    aguia1 = Image.open("Images/aguia1.jpg")
-    aguia2 = Image.open("Images/aguia2.jpg") 
-    aguia3 = Image.open("Images/aguia3.jpg")
-    aguia4 = Image.open("Images/aguia4.jpg")
-    profile = Image.open("Images/profile.jpg")
-    aguias = Image.open("Images/aguias.png")
+    aguia1 = Image.open("Images/aguia1.png")
+    aguia2 = Image.open("Images/aguia2.png") 
+    aguia3 = Image.open("Images/aguia3.png")
+    aguia4 = Image.open("Images/aguia4.png")
     scrap  = Image.open("Images/webscrap.jpeg")
 
     st.sidebar.image(scrap,caption="", width=300)
@@ -54,7 +52,7 @@ def main():
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
     file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_machine_learning.csv',
                 'CSV/indeed_Engenheiro_de_dados.csv']
-    choice = st.sidebar.selectbox("Escolher",activities)
+    choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
     # Definir a data da última atualização
 
@@ -66,13 +64,22 @@ def main():
         st.write('Última atualizacao: '+ data_update)
 
     if choice == 'Home':
+       
+        col1, col2 = st.beta_columns(2)
+    
+        col11, col22 = st.beta_columns(2)
         
-        st.image(aguias,caption="", width=700, height=300)
-        #st.subheader("Selecione o cargo")
-        #st.subheader(" - Cientista de Dados")
-        #st.subheader(" - Analista de Dados")
-        #st.subheader(" - Engenheiro de Machine Learning")
-        #st.subheader(" - Engenheiro de Dados")
+        col1.header("Cientista de Dados")
+        col1.image(aguia1, width=300, height=300)
+        
+        col2.header("Analista de Dados")
+        col2.image(aguia2, width=300, height=200)
+
+        col11.header("Engenheiro de M.Learning")
+        col11.image(aguia3, width=300, height=300)
+
+        col22.header("Engenheiro de Dados")
+        col22.image(aguia4, width=300, height=300)
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
@@ -128,7 +135,7 @@ def main():
 
   
     elif choice == 'About':
-        st.sidebar.image(profile,caption="", width=300, height= 200)
+        #st.sidebar.image(about,caption="", width=300, height= 200)
         st.subheader("Built with Streamlit")
         st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
         st.markdown("A coleta dos dados é feita às 9h, 12h, 15h e 18h")
