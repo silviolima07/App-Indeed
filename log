@@ -1,9 +1,10 @@
 No ramo main
 Your branch is up to date with 'origin/main'.
 
-Arquivos não monitorados:
-  (utilize "git add <arquivo>..." para incluir o que será submetido)
+Changes not staged for commit:
+  (utilize "git add <arquivo>..." para atualizar o que será submetido)
+  (utilize "git checkout -- <arquivo>..." para descartar mudanças no diretório de trabalho)
 
-	log
+	modified:   log
 
-nada adicionado ao envio mas arquivos não registrados estão presentes (use "git add" to registrar)
+nenhuma modificação adicionada à submissão (utilize "git add" e/ou "git commit -a")
