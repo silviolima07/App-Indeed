@@ -4,8 +4,7 @@ Your branch is up to date with 'origin/main'.
 Mudanças a serem submetidas:
   (use "git reset HEAD <file>..." to unstage)
 
-	modified:   CSVindeed_Cientista_de_dados.csv
-	modified:   CSVindeed_Engenheiro_de_dados.csv
+	modified:   log
 
 Changes not staged for commit:
   (utilize "git add <arquivo>..." para atualizar o que será submetido)
