@@ -50,8 +50,8 @@ def main():
     st.sidebar.image(scrap,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
-    file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_machine_learning.csv',
-                'CSV/indeed_Engenheiro_de_dados.csv']
+    file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_Machine_Learning.csv',
+                'CSV/indeed_Engenheiro_de_Dados.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
     # Definir a data da última atualização
