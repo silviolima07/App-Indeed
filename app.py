@@ -91,6 +91,7 @@ def main():
         if st.button('Download Dataframe as CSV'):
             cargo = activities[1].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
+            st.subheader("Salvando: "+filename)
             tmp_download_link = download_link(df, filename, 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
         
@@ -104,6 +105,7 @@ def main():
         if st.button('Download Dataframe as CSV'):
             cargo = activities[2].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
+            st.subheader("Salvando: "+filename)
             tmp_download_link = download_link(df, filename, 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)     
    
@@ -117,6 +119,7 @@ def main():
         if st.button('Download Dataframe as CSV'):
             cargo = activities[3].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
+            st.subheader("Salvando: "+filename)
             tmp_download_link = download_link(df, filename, 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
 
@@ -130,6 +133,7 @@ def main():
         if st.button('Download Dataframe as CSV'):
             cargo = activities[4].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
+            st.subheader("Salvando: "+filename)
             tmp_download_link = download_link(df, filename, 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
 
