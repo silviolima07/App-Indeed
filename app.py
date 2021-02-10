@@ -136,11 +136,11 @@ def main():
             linko= f'<a href="data:file/txt;base64,{b64}" download="myfilename.csv">Download csv file</a>'
             st.markdown(linko, unsafe_allow_html=True)
 
-            #cargo = activities[4].replace(' ', '_')
-            #filename = 'indeed_'+cargo+'.csv'
-            #st.subheader("Salvando: "+filename)
-            #tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            #st.markdown(tmp_download_link, unsafe_allow_html=True)
+            cargo = activities[4].replace(' ', '_')
+            filename = 'indeed_'+cargo+'.csv'
+            st.subheader("Salvando: "+filename)
+            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+            st.markdown(tmp_download_link, unsafe_allow_html=True)
 
   
     elif choice == 'About':
