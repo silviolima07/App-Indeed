@@ -131,11 +131,15 @@ def main():
         st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
-            cargo = activities[4].replace(' ', '_')
-            filename = 'indeed_'+cargo+'.csv'
-            st.subheader("Salvando: "+filename)
-            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)
+            csv = df.to_csv(index=False)
+            b64 = base64.b64encode(csv.encode()).decode()  # some strings
+            linko= f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">Download csv file</a>'
+            st.markdown(linko, unsafe_allow_html=True)
+            #cargo = activities[4].replace(' ', '_')
+            #filename = 'indeed_'+cargo+'.csv'
+            #st.subheader("Salvando: "+filename)
+            #tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+            #st.markdown(tmp_download_link, unsafe_allow_html=True)
 
   
     elif choice == 'About':
