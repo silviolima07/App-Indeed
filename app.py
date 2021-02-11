@@ -10,6 +10,8 @@ pd.set_option('precision',2)
 
 import base64
 
+import sys
+
 
 def download_link(df, texto1, texto2):
     if isinstance(df,pd.DataFrame):
@@ -19,6 +21,20 @@ def download_link(df, texto1, texto2):
     b64 = base64.b64encode(object_to_download.encode()).decode()
 
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
+
+
+def get_minio_link(buffer, filename, content_type, bucket_name):
+    minio_client.put_object(
+        bucket_name,
+        filename,
+        data=buffer,
+        length=len(buffer.getvalue()),
+        content_type=content_type,
+    )
+    download_url = minio_client.presigned_get_object(
+                                       bucket_name,
+                                       filename)
+    return download_ur
     
 
 def main():
@@ -131,16 +147,14 @@ def main():
         st.subheader("Total de vagas: "+total)
         st.table(df)
         if st.button('Download Dataframe as CSV'):
-            csv = df.to_csv(index=False)
-            b64 = base64.b64encode(csv.encode()).decode()  # some strings
-            linko= f'<a href="data:file/txt;base64,{b64}" download="myfilename.csv">Download csv file</a>'
-            st.markdown(linko, unsafe_allow_html=True)
-
             cargo = activities[4].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
             st.subheader("Salvando: "+filename)
             tmp_download_link = download_link(df, filename, 'Click here to download your data!')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
+          
+            
+            
 
   
     elif choice == 'About':
