@@ -29,18 +29,11 @@ def create_link(link, texto1):
     return f'<a href= "{link}">{texto1}</a>'
 
 
-def get_minio_link(buffer, filename, content_type, bucket_name):
-    minio_client.put_object(
-        bucket_name,
-        filename,
-        data=buffer,
-        length=len(buffer.getvalue()),
-        content_type=content_type,
-    )
-    download_url = minio_client.presigned_get_object(
-                                       bucket_name,
-                                       filename)
-    return download_ur
+def make_clickable(link):
+    # target _blank to open new window
+    # extract clickable text to display for your link
+    text = link.split('=')[1]
+    return f'<a target="_blank" href="{link}">{text}</a>'
     
 
 def main():
@@ -149,18 +142,22 @@ def main():
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(file_csv[3])
         links=[]
-        for i in range(len(df)):
-            link_vaga = df.Link[i]
-            tmp_link = create_link(link_vaga, 'Link da vaga')
-            #link = st.markdown(tmp_link, unsafe_allow_html=True)
-            links.append(tmp_link)
-        df.Link = links
+        #for i in range(len(df)):
+        #    link_vaga = df.Link[i]
+        #    tmp_link = create_link(link_vaga, 'Link da vaga')
+        #    link = st.write(tmp_link, unsafe_allow_html=True)
+        #    links.append(link)
+        #df.Link = links
+        # link is the column with hyperlinks
+        df['Link'] = df['Link'].apply(make_clickable)
+        df = df.to_html(escape=False)
+        st.write(df, unsafe_allow_html=True)
  
 
         total = str(len(df))
         st.title(activities[4])
         st.subheader("Total de vagas: "+total)
-        st.table(df)
+        #st.table(df)
         if st.button('Download Dataframe as CSV'):
             cargo = activities[4].replace(' ', '_')
             filename = 'indeed_'+cargo+'.csv'
