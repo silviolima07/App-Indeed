@@ -23,6 +23,11 @@ def download_link(df, texto1, texto2):
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
 
 
+def create_link(link, texto1, texto2):
+  
+    return f'<a href= link download="{texto1}">{texto2}</a>'
+
+
 def get_minio_link(buffer, filename, content_type, bucket_name):
     minio_client.put_object(
         bucket_name,
@@ -142,6 +147,20 @@ def main():
     elif choice == activities[4]:
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(file_csv[3])
+        links=[]
+        for i in range(len(df[0:3])):
+            teste = df.Link[i]
+            print("Teste:", teste)
+            html_page = """
+             <a href=df.Link[i]>Link da vaga</a> 
+              """
+            tmp_link = create_link(teste, "Link", 'Click here to download your data!')
+
+            link = st.markdown(tmp_link, unsafe_allow_html=True)
+            links.append(link)
+        df.Link = links
+ 
+
         total = str(len(df))
         st.title(activities[4])
         st.subheader("Total de vagas: "+total)
