@@ -24,8 +24,9 @@ def download_link(df, texto1, texto2):
 
 
 def create_link(link, texto1):
+    #print("Link no create_link: ", link)
   
-    return f"<a href= link>{texto1}</a>"
+    return f'<a href= "{link}">{texto1}</a>'
 
 
 def get_minio_link(buffer, filename, content_type, bucket_name):
@@ -148,16 +149,11 @@ def main():
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(file_csv[3])
         links=[]
-        for i in range(len(df[0:3])):
-            teste = df.Link[i]
-            print("Teste:", teste)
-            #html_page = """
-            # <a href=df.Link[i]>Link da vaga</a> 
-            #  """
-            st.subheader("Teste: "+teste)
-            tmp_link = create_link(teste, 'Link da vaga')
-            link = st.markdown(tmp_link, unsafe_allow_html=True)
-            links.append(link)
+        for i in range(len(df)):
+            link_vaga = df.Link[i]
+            tmp_link = create_link(link_vaga, 'Link da vaga')
+            #link = st.markdown(tmp_link, unsafe_allow_html=True)
+            links.append(tmp_link)
         df.Link = links
  
 
