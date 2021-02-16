@@ -23,9 +23,9 @@ def download_link(df, texto1, texto2):
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
 
 
-def create_link(link, texto1, texto2):
+def create_link(link, texto1):
   
-    return f'<a href= link download="{texto1}">{texto2}</a>'
+    return f"<a href= link>{texto1}</a>"
 
 
 def get_minio_link(buffer, filename, content_type, bucket_name):
@@ -151,11 +151,11 @@ def main():
         for i in range(len(df[0:3])):
             teste = df.Link[i]
             print("Teste:", teste)
-            html_page = """
-             <a href=df.Link[i]>Link da vaga</a> 
-              """
-            tmp_link = create_link(teste, "Link", 'Click here to download your data!')
-
+            #html_page = """
+            # <a href=df.Link[i]>Link da vaga</a> 
+            #  """
+            st.subheader("Teste: "+teste)
+            tmp_link = create_link(teste, 'Link da vaga')
             link = st.markdown(tmp_link, unsafe_allow_html=True)
             links.append(link)
         df.Link = links
