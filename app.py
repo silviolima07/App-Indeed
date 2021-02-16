@@ -22,18 +22,11 @@ def download_link(df, texto1, texto2):
 
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
 
-
-def create_link(link, texto1):
-    #print("Link no create_link: ", link)
-  
-    return f'<a href= "{link}">{texto1}</a>'
-
-
 def make_clickable(link):
     # target _blank to open new window
     # extract clickable text to display for your link
-    text = link.split('=')[1]
-    return f'<a target="_blank" href="{link}">{text}</a>'
+    text = link
+    return f'<a target="_blank" href="{link}">Link da vaga</a>' # ou {text} e irá mostrar o link clicável
     
 
 def main():
@@ -102,13 +95,21 @@ def main():
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
-        st.table(df)
-        if st.button('Download Dataframe as CSV'):
-            cargo = activities[1].replace(' ', '_')
-            filename = 'indeed_'+cargo+'.csv'
-            st.subheader("Salvando: "+filename)
-            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)
+
+        
+        # link is the column with hyperlinks
+        df['Link'] = df['Link'].apply(make_clickable)
+        df = df.to_html(escape=False)
+        st.markdown(df, unsafe_allow_html=True)
+
+        
+        #st.table(df)
+        #if st.button('Download Dataframe as CSV'):
+        #    cargo = activities[1].replace(' ', '_')
+        #    filename = 'indeed_'+cargo+'.csv'
+        #    st.subheader("Salvando: "+filename)
+        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
         
     elif choice == activities[2]:
         st.sidebar.image(aguia2,caption="", width=300)
@@ -116,13 +117,21 @@ def main():
         total = str(len(df))
         st.title(activities[2])
         st.subheader("Total de vagas: "+total)
-        st.table(df)
-        if st.button('Download Dataframe as CSV'):
-            cargo = activities[2].replace(' ', '_')
-            filename = 'indeed_'+cargo+'.csv'
-            st.subheader("Salvando: "+filename)
-            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)     
+
+        # link is the column with hyperlinks
+        df['Link'] = df['Link'].apply(make_clickable)
+        df = df.to_html(escape=False)
+        st.markdown(df, unsafe_allow_html=True)
+
+
+        
+        #st.table(df)
+        #if st.button('Download Dataframe as CSV'):
+        #    cargo = activities[2].replace(' ', '_')
+        #    filename = 'indeed_'+cargo+'.csv'
+        #    st.subheader("Salvando: "+filename)
+        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+        #    st.markdown(tmp_download_link, unsafe_allow_html=True)     
    
     elif choice == activities[3]:
         st.sidebar.image(aguia3,caption="", width=300)
@@ -130,40 +139,41 @@ def main():
         total = str(len(df))
         st.title(activities[3])
         st.subheader("Total de vagas: "+total)
-        st.table(df)
-        if st.button('Download Dataframe as CSV'):
-            cargo = activities[3].replace(' ', '_')
-            filename = 'indeed_'+cargo+'.csv'
-            st.subheader("Salvando: "+filename)
-            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)
+
+        # link is the column with hyperlinks
+        df['Link'] = df['Link'].apply(make_clickable)
+        df = df.to_html(escape=False)
+        st.markdown(df, unsafe_allow_html=True)
+        
+
+        #st.table(df)
+        #if st.button('Download Dataframe as CSV'):
+        #    cargo = activities[3].replace(' ', '_')
+        #    filename = 'indeed_'+cargo+'.csv'
+        #    st.subheader("Salvando: "+filename)
+        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
 
     elif choice == activities[4]:
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(file_csv[3])
-        links=[]
-        #for i in range(len(df)):
-        #    link_vaga = df.Link[i]
-        #    tmp_link = create_link(link_vaga, 'Link da vaga')
-        #    link = st.write(tmp_link, unsafe_allow_html=True)
-        #    links.append(link)
-        #df.Link = links
-        # link is the column with hyperlinks
-        df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.write(df, unsafe_allow_html=True)
- 
-
         total = str(len(df))
         st.title(activities[4])
         st.subheader("Total de vagas: "+total)
+
+
+        # link is the column with hyperlinks
+        df['Link'] = df['Link'].apply(make_clickable)
+        df = df.to_html(escape=False)
+        st.markdown(df, unsafe_allow_html=True)
+        
         #st.table(df)
-        if st.button('Download Dataframe as CSV'):
-            cargo = activities[4].replace(' ', '_')
-            filename = 'indeed_'+cargo+'.csv'
-            st.subheader("Salvando: "+filename)
-            tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)
+        #if st.button('Download Dataframe as CSV'):
+        #    cargo = activities[4].replace(' ', '_')
+        #    filename = 'indeed_'+cargo+'.csv'
+        #    st.subheader("Salvando: "+filename)
+        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
+        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
           
             
             
