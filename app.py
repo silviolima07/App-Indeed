@@ -78,16 +78,16 @@ def main():
         col11, col22 = st.beta_columns(2)
         
         col1.header("Cientista de Dados")
-        col1.image(aguia1, width=300, height=300)
+        col1.image(aguia1, width=300)
         
         col2.header("Analista de Dados")
-        col2.image(aguia2, width=300, height=200)
+        col2.image(aguia2, width=300)
 
         col11.header("Engenheiro de M.Learning")
-        col11.image(aguia3, width=300, height=300)
+        col11.image(aguia3, width=300)
 
         col22.header("Engenheiro de Dados")
-        col22.image(aguia4, width=300, height=300)
+        col22.image(aguia4, width=300)
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
