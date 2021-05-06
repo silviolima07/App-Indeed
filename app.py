@@ -71,7 +71,7 @@ def main():
     if choice != 'About':
         st.write('Última atualizacao: '+ data_update)
 
-    if choice == 'Home':
+    if choice == activities[0]:
        
         col1, col2 = st.beta_columns(2)
     
