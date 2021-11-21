@@ -97,7 +97,7 @@ def main():
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
-        st.dataframe(df)
+        st.table(df)
 
         
         # link is the column with hyperlinks
@@ -120,6 +120,7 @@ def main():
         total = str(len(df))
         st.title(activities[2])
         st.subheader("Total de vagas: "+total)
+        st.table(df)
 
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
@@ -142,7 +143,7 @@ def main():
         total = str(len(df))
         st.title(activities[3])
         st.subheader("Total de vagas: "+total)
-
+        st.table(df)
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
         #df = df.to_html(escape=False)
@@ -163,7 +164,7 @@ def main():
         total = str(len(df))
         st.title(activities[4])
         st.subheader("Total de vagas: "+total)
-
+        st.table(df)
 
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
