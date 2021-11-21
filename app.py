@@ -62,6 +62,8 @@ def main():
                 'CSV/indeed_Engenheiro_de_Dados.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
+    header_list = ["Cargo", "Empresa"]
+
     # Definir a data da última atualização
 
 
@@ -91,7 +93,7 @@ def main():
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
-        df = pd.read_csv(file_csv[0], columns=['Cargo', 'Empresa'])
+        df = pd.read_csv(file_csv[0], names = header_list)
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
