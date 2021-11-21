@@ -98,9 +98,9 @@ def main():
 
         
         # link is the column with hyperlinks
-        df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.markdown(df, unsafe_allow_html=True)
+        #df['Link'] = df['Link'].apply(make_clickable)
+        #df = df.to_html(escape=False)
+        #st.markdown(df, unsafe_allow_html=True)
 
         
         #st.table(df)
@@ -119,9 +119,9 @@ def main():
         st.subheader("Total de vagas: "+total)
 
         # link is the column with hyperlinks
-        df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.markdown(df, unsafe_allow_html=True)
+        #df['Link'] = df['Link'].apply(make_clickable)
+        #df = df.to_html(escape=False)
+        #st.markdown(df, unsafe_allow_html=True)
 
 
         
@@ -141,9 +141,9 @@ def main():
         st.subheader("Total de vagas: "+total)
 
         # link is the column with hyperlinks
-        df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.markdown(df, unsafe_allow_html=True)
+        #df['Link'] = df['Link'].apply(make_clickable)
+        #df = df.to_html(escape=False)
+        #st.markdown(df, unsafe_allow_html=True)
         
 
         #st.table(df)
@@ -163,9 +163,9 @@ def main():
 
 
         # link is the column with hyperlinks
-        df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.markdown(df, unsafe_allow_html=True)
+        #df['Link'] = df['Link'].apply(make_clickable)
+        #df = df.to_html(escape=False)
+        #st.markdown(df, unsafe_allow_html=True)
         
         #st.table(df)
         #if st.button('Download Dataframe as CSV'):
