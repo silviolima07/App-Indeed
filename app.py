@@ -99,8 +99,8 @@ def main():
         
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
-        #df = df.to_html(escape=False)
-        #st.markdown(df, unsafe_allow_html=True)
+        df = df.to_html(escape=False)
+        st.markdown(df, unsafe_allow_html=True)
 
         
         #st.table(df)
