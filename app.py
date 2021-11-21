@@ -194,6 +194,8 @@ def main():
         st.write("O scrap para o cargo de Engenheiro de Machine Learning trouxe poucas linhas.")
         st.write("Para os demais cargos, foram encontradas mais de 100 vagas, distribuídas em diversas páginas.")
         st.write("Esse app traz as 10 primeiras páginas apenas.")
+        st.subheader("Observacao:")
+        st.write("O codigo html da pagina muda ao longo do tempo e ajustes no scrap são necessarios.")
         #st.subheader("Versão 02")
         #st.write(" - incluído o link encurtado da vaga")
         st.subheader("by Silvio Lima")
