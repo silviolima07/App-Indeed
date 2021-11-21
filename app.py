@@ -91,7 +91,7 @@ def main():
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
-        df = pd.read_csv(file_csv[0])
+        df = pd.read_csv(file_csv[0], columns=['Cargo', 'Empresa'])
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
