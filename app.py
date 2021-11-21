@@ -62,7 +62,7 @@ def main():
                 'CSV/indeed_Engenheiro_de_Dados.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
-    header_list = ["Cargo", "Empresa"]
+    #header_list = ["Cargo", "Empresa"]
 
     # Definir a data da última atualização
 
@@ -93,16 +93,17 @@ def main():
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
-        df = pd.read_csv(file_csv[0], names = header_list)
+        df = pd.read_csv(file_csv[0])
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
+        st.dataframe(df)
 
         
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
-        df = df.to_html(escape=False)
-        st.markdown(df, unsafe_allow_html=True)
+        #df = df.to_html(escape=False)
+        #st.markdown(df, unsafe_allow_html=True)
 
         
         #st.table(df)
