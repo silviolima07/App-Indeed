@@ -75,9 +75,9 @@ def main():
 
     if choice == activities[0]:
        
-        col1, col2 = st.beta_columns(2)
+        col1, col2 = st.columns(2)
     
-        col11, col22 = st.beta_columns(2)
+        col11, col22 = st.columns(2)
         
         col1.header("Cientista de Dados")
         col1.image(aguia1, width=300)
