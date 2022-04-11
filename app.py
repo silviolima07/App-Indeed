@@ -64,6 +64,7 @@ def main():
     
 
     for f in glob.iglob("CSV/*.csv"):
+        print(f)
         lista_csv.append(f)
         #f.replace('CSV/indeed_CD_','')
         #f.replace('.csv','')
