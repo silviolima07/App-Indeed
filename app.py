@@ -128,6 +128,9 @@ def main():
         st.title(activities[4])
         st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
+        
+        if st.button("Download"):
+            download_link(df, "Teste1", "Teste2")
             
   
     elif choice == 'About':
