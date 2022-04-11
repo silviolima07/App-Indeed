@@ -68,8 +68,8 @@ def main():
         temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp = temp.replace('.csv','').replace('_','  ')
         lista_intervalo.append(temp)
-    st.write(lista_intervalo)
-    st.write(lista_csv)
+    #st.write(lista_intervalo)
+    #st.write(lista_csv)
 
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
@@ -113,7 +113,7 @@ def main():
         df = pd.read_csv(lista_csv[3])
         st.title(activities[2])
         st.subheader("Vagas: "+str(lista_intervalo[3]))
-        st.dataframe(df)    
+        st.table(df)    
    
     elif choice == activities[3]: # EML
         st.sidebar.image(aguia3,caption="", width=300)
