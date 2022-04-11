@@ -106,10 +106,9 @@ def main():
         df = pd.read_csv(lista_csv[0])
         total = str(len(df))
         st.title(activities[1])
-        st.subheader("Total de vagas: "+total)
+        st.subheader("Vagas: ")
         vagas = str(lista_intervalo[0])
         st.subheader(vagas)
-        st.subheader("vagas: ", +vagas)
         st.table(df)
 
         
