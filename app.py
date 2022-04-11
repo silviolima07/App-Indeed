@@ -117,7 +117,7 @@ def main():
         st.title(activities[1])
         st.subheader("Vagas: "+str(lista_intervalo[0]))
         st.table(df)
-        st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+        st.markdown(get_table_download_link(df, lista_csv[0]), unsafe_allow_html=True)
         
     elif choice == activities[2]: # AD
         st.sidebar.image(aguia2,caption="", width=300)
@@ -125,7 +125,7 @@ def main():
         st.title(activities[2])
         st.subheader("Vagas: "+str(lista_intervalo[3]))
         st.table(df)
-        st.markdown(get_table_download_link(df), unsafe_allow_html=True)   
+        st.markdown(get_table_download_link(df, lista_csv[3]), unsafe_allow_html=True)   
    
     elif choice == activities[3]: # EML
         st.sidebar.image(aguia3,caption="", width=300)
@@ -133,7 +133,7 @@ def main():
         st.title(activities[3])
         st.subheader("Vagas: "+str(lista_intervalo[2]))
         st.table(df)
-        st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+        st.markdown(get_table_download_link(df,lista_csv[2]), unsafe_allow_html=True)
 
     elif choice == activities[4]: # ED
         st.sidebar.image(aguia4,caption="", width=300)
