@@ -65,7 +65,8 @@ def main():
     
     for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories 
         st.write(f)
-        temp = f.replace('CSV/indeed_CD_','')
+        temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
+        temp = temp.replace('.csv','')
         st.write(temp)
 
     file_csv = ['CSV/indeed_CD*.csv',
