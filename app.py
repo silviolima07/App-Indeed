@@ -143,7 +143,7 @@ def main():
         st.title(activities[4])
         st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
-        file = lista_csv[1].str.replace('CSV/','')
+        file = lista_csv[1].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
             
   
