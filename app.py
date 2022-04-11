@@ -72,13 +72,7 @@ def main():
     st.write(lista_intervalo)
     st.write(lista_csv)
 
-    file_csv = ['CSV/indeed_CD*.csv',
-                'CSV/indeed_AD*.csv', 
-                'CSV/indeed_EML*.csv',
-                'CSV/indeed_ED*.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
-
-    #header_list = ["Cargo", "Empresa"]
 
     # Definir a data da última atualização
 
@@ -109,7 +103,7 @@ def main():
         
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
-        df = pd.read_csv(file_csv[0])
+        df = pd.read_csv(lista_csv[0])
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
@@ -132,7 +126,7 @@ def main():
         
     elif choice == activities[2]:
         st.sidebar.image(aguia2,caption="", width=300)
-        df = pd.read_csv(file_csv[1])
+        df = pd.read_csv(lista_csv[1])
         total = str(len(df))
         st.title(activities[2])
         st.subheader("Total de vagas: "+total)
@@ -155,7 +149,7 @@ def main():
    
     elif choice == activities[3]:
         st.sidebar.image(aguia3,caption="", width=300)
-        df = pd.read_csv(file_csv[2])
+        df = pd.read_csv(lista_csv[2])
         total = str(len(df))
         st.title(activities[3])
         st.subheader("Total de vagas: "+total)
@@ -176,7 +170,7 @@ def main():
 
     elif choice == activities[4]:
         st.sidebar.image(aguia4,caption="", width=300)
-        df = pd.read_csv(file_csv[3])
+        df = pd.read_csv(lista_csv[3])
         total = str(len(df))
         st.title(activities[4])
         st.subheader("Total de vagas: "+total)
