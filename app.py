@@ -65,8 +65,8 @@ def main():
 
     for f in glob.iglob("CSV/*.csv"):
         lista_csv.append(f)
-        f.str.replace('CSV/indeed_CD_','')
-        f.str.replace('.csv','')
+        f.replace('CSV/indeed_CD_','')
+        f.replace('.csv','')
         lista_intervalo.append(f)
         print(lista_csv)
         print(lista_intervalo)
