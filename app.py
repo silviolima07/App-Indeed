@@ -73,6 +73,8 @@ def main():
     #print(lista_intervalo)
     
 
+
+
     file_csv = ['CSV/indeed_CD*.csv',
                 'CSV/indeed_AD*.csv', 
                 'CSV/indeed_EML*.csv',
