@@ -60,12 +60,17 @@ def main():
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
     lista_csv= []
+    lista_intervalo = []
     
-    
-    for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories 
+
+    for f in glob.iglob("CSV/*.csv"):
         lista_csv.append(f)
-     
-    st.write(lista_csv)
+        f.str.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
+        f.str.replace('.csv','')
+        lista_intervalo.append(f)
+        print(lista_csv)
+        print(lista_intervalo)
+    
 
     file_csv = ['CSV/indeed_CD*.csv',
                 'CSV/indeed_AD*.csv', 
