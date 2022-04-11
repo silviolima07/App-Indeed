@@ -64,7 +64,6 @@ def main():
     
     
     for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories 
-        st.write(f)
         lista_csv.append(f)
         temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp = temp.replace('.csv','').replace('_','  ')
@@ -112,27 +111,13 @@ def main():
         st.table(df)
 
         
-        # link is the column with hyperlinks
-        #df['Link'] = df['Link'].apply(make_clickable)
-        #df = df.to_html(escape=False)
-        #st.markdown(df, unsafe_allow_html=True)
-
-        
-        #st.table(df)
-        #if st.button('Download Dataframe as CSV'):
-        #    cargo = activities[1].replace(' ', '_')
-        #    filename = 'indeed_'+cargo+'.csv'
-        #    st.subheader("Salvando: "+filename)
-        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
-        
     elif choice == activities[2]:
         st.sidebar.image(aguia2,caption="", width=300)
         df = pd.read_csv(lista_csv[1])
         total = str(len(df))
         st.title(activities[2])
         st.subheader("Total de vagas: "+total)
-        st.table(df)
+        st.dataframe(df)
 
         # link is the column with hyperlinks
         #df['Link'] = df['Link'].apply(make_clickable)
