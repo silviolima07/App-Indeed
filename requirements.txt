@@ -1,5 +1,4 @@
 -i https://pypi.org/simple
-markupsafe==1.1.1
 numpy==1.19.5
 packaging==20.8
 pillow==8.1.0
