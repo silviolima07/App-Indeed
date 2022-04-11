@@ -30,8 +30,8 @@ def get_table_download_link(df,file):
     """
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-href = f'<a href="data:file/csv;base64,{b64}" download= "{file}" >Download csv</a>'
-    return href
+    href = f'<a href="data:file/csv;base64,{b64}" download= "{file}" >Download csv</a>'
+    
 
 def make_clickable(link):
     # target _blank to open new window
