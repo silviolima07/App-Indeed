@@ -107,7 +107,9 @@ def main():
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
-        st.subheader("vagas: ", +str(lista_intervalo[0]))
+        vagas = str(lista_intervalo[0])
+        st.subheader(vagas)
+        st.subheader("vagas: ", +vagas)
         st.table(df)
 
         
