@@ -74,7 +74,8 @@ def main():
     lista_intervalo = []
     
     
-    for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories 
+    for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories
+        f = f.replace('CSV_','') 
         lista_csv.append(f)
         temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp = temp.replace('.csv','').replace('_','  ')
