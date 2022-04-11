@@ -67,7 +67,8 @@ def main():
         st.write(f)
         temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp = temp.replace('.csv','').replace('_','  ')
-        st.write(temp)
+        lista_intervalo.append(temp)
+    st.write(lista_intervalo)
 
     file_csv = ['CSV/indeed_CD*.csv',
                 'CSV/indeed_AD*.csv', 
