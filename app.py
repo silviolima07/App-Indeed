@@ -100,7 +100,7 @@ def main():
         col22.header("Engenheiro de Dados")
         col22.image(aguia4, width=300)
         
-    elif choice == activities[1]:
+    elif choice == activities[1]: # CD
         st.sidebar.image(aguia1,caption="", width=300)
         df = pd.read_csv(lista_csv[0])
         st.title(activities[1])
@@ -108,25 +108,25 @@ def main():
         st.table(df)
 
         
-    elif choice == activities[2]:
+    elif choice == activities[2]: # AD
         st.sidebar.image(aguia2,caption="", width=300)
-        df = pd.read_csv(lista_csv[1])
+        df = pd.read_csv(lista_csv[3])
         st.title(activities[2])
-        st.subheader("Vagas: "+str(lista_intervalo[1]))
+        st.subheader("Vagas: "+str(lista_intervalo[3]))
         st.dataframe(df)    
    
-    elif choice == activities[3]:
+    elif choice == activities[3]: # EML
         st.sidebar.image(aguia3,caption="", width=300)
         df = pd.read_csv(lista_csv[2])
         st.title(activities[3])
         st.subheader("Vagas: "+str(lista_intervalo[2]))
         st.table(df)
 
-    elif choice == activities[4]:
+    elif choice == activities[4]: # ED
         st.sidebar.image(aguia4,caption="", width=300)
-        df = pd.read_csv(lista_csv[3])
+        df = pd.read_csv(lista_csv[1])
         st.title(activities[4])
-        st.subheader("Vagas: "+str(lista_intervalo[3]))
+        st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
             
   
