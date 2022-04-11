@@ -146,6 +146,7 @@ def main():
         #st.subheader("Versão 02")
         #st.write(" - incluído o link encurtado da vaga")
         st.subheader("by Silvio Lima")
+        st.write('https://www.linkedin.com/in/silviocesarlima/')
         
         #if st.button("Linkedin"):
         #    js = "window.open('https://www.linkedin.com/in/silviocesarlima/')"
