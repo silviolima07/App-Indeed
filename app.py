@@ -69,8 +69,8 @@ def main():
         temp = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp = temp.replace('.csv','').replace('_','  ')
         lista_intervalo.append(temp)
-    st.write(lista_intervalo)
-    st.write(lista_csv)
+    #st.write(lista_intervalo)
+    #st.write(lista_csv)
 
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
@@ -107,6 +107,7 @@ def main():
         total = str(len(df))
         st.title(activities[1])
         st.subheader("Total de vagas: "+total)
+        st.subheader("vagas: ", lista_intervalo[0)
         st.table(df)
 
         
