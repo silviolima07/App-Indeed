@@ -103,96 +103,46 @@ def main():
     elif choice == activities[1]:
         st.sidebar.image(aguia1,caption="", width=300)
         df = pd.read_csv(lista_csv[0])
-        total = str(len(df))
         st.title(activities[1])
         st.subheader("Vagas: "+str(lista_intervalo[0]))
-        vagas = str(lista_intervalo[0])
-        st.subheader(vagas)
         st.table(df)
 
         
     elif choice == activities[2]:
         st.sidebar.image(aguia2,caption="", width=300)
         df = pd.read_csv(lista_csv[1])
-        total = str(len(df))
         st.title(activities[2])
-        st.subheader("Total de vagas: "+total)
-        st.dataframe(df)
-
-        # link is the column with hyperlinks
-        #df['Link'] = df['Link'].apply(make_clickable)
-        #df = df.to_html(escape=False)
-        #st.markdown(df, unsafe_allow_html=True)
-
-
-        
-        #st.table(df)
-        #if st.button('Download Dataframe as CSV'):
-        #    cargo = activities[2].replace(' ', '_')
-        #    filename = 'indeed_'+cargo+'.csv'
-        #    st.subheader("Salvando: "+filename)
-        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-        #    st.markdown(tmp_download_link, unsafe_allow_html=True)     
+        st.subheader("Vagas: "+str(lista_intervalo[1]))
+        st.dataframe(df)    
    
     elif choice == activities[3]:
         st.sidebar.image(aguia3,caption="", width=300)
         df = pd.read_csv(lista_csv[2])
-        total = str(len(df))
         st.title(activities[3])
-        st.subheader("Total de vagas: "+total)
+        st.subheader("Vagas: "+str(lista_intervalo[2]))
         st.table(df)
-        # link is the column with hyperlinks
-        #df['Link'] = df['Link'].apply(make_clickable)
-        #df = df.to_html(escape=False)
-        #st.markdown(df, unsafe_allow_html=True)
-        
-
-        #st.table(df)
-        #if st.button('Download Dataframe as CSV'):
-        #    cargo = activities[3].replace(' ', '_')
-        #    filename = 'indeed_'+cargo+'.csv'
-        #    st.subheader("Salvando: "+filename)
-        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
 
     elif choice == activities[4]:
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(lista_csv[3])
-        total = str(len(df))
         st.title(activities[4])
-        st.subheader("Total de vagas: "+total)
+        st.subheader("Vagas: "+str(lista_intervalo[3]))
         st.table(df)
-
-        # link is the column with hyperlinks
-        #df['Link'] = df['Link'].apply(make_clickable)
-        #df = df.to_html(escape=False)
-        #st.markdown(df, unsafe_allow_html=True)
-        
-        #st.table(df)
-        #if st.button('Download Dataframe as CSV'):
-        #    cargo = activities[4].replace(' ', '_')
-        #    filename = 'indeed_'+cargo+'.csv'
-        #    st.subheader("Salvando: "+filename)
-        #    tmp_download_link = download_link(df, filename, 'Click here to download your data!')
-        #    st.markdown(tmp_download_link, unsafe_allow_html=True)
-          
             
-            
-
   
     elif choice == 'About':
         #st.sidebar.image(about,caption="", width=300, height= 200)
         st.subheader("Built with Streamlit")
         
-        st.write("Dados coletados via scrap usando: Selenium e BeautifulSoup.")
+        st.write("Dados coletados via scrap usando: request e BeautifulSoup.")
         #st.markdown("A coleta dos dados é feita às 9h, 12h, 15h e 18h")
-        st.write("Executados via crontab scripts realizam o scrap e atualização do app.")
-        st.write("Foram definidos 4 cargos apenas para validar o processo.")
-        st.write("O scrap para o cargo de Engenheiro de Machine Learning trouxe poucas linhas.")
-        st.write("Para os demais cargos, foram encontradas mais de 100 vagas, distribuídas em diversas páginas.")
-        st.write("Esse app traz as 10 primeiras páginas apenas.")
-        st.subheader("Observacao:")
-        st.write("O codigo html da pagina muda ao longo do tempo e ajustes no scrap são necessarios.")
+        #st.write("Executados via crontab scripts realizam o scrap e atualização do app.")
+        #st.write("Foram definidos 4 cargos apenas para validar o processo.")
+        #st.write("O scrap para o cargo de Engenheiro de Machine Learning trouxe poucas linhas.")
+        #st.write("Para os demais cargos, foram encontradas mais de 100 vagas, distribuídas em diversas páginas.")
+        st.write("Esse app traz as 40 primeiras páginas apenas.")
+        #st.subheader("Observacao:")
+        #st.write("O codigo html da pagina muda ao longo do tempo e ajustes no scrap são necessarios.")
         #st.subheader("Versão 02")
         #st.write(" - incluído o link encurtado da vaga")
         st.subheader("by Silvio Lima")
