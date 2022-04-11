@@ -23,14 +23,14 @@ def download_link(df):
 
     return f'<a href="data:file/txt;base64,{b64}" download="{texto1}">{texto2}</a>'
 
-def get_table_download_link(df):
+def get_table_download_link(df,file):
     """Generates a link allowing the data in a given panda dataframe to be downloaded
     in:  dataframe
     out: href string
     """
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-    href = f'<a href="data:file/csv;base64,{b64}" download="myfile.csv">Download csv file</a>'
+    href = f'<a href="data:file/csv;base64,{b64}" download= file >Download csv file</a>'
     return href
 
 def make_clickable(link):
@@ -140,7 +140,7 @@ def main():
         st.title(activities[4])
         st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
-        st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+        st.markdown(get_table_download_link(lista_csv[1]), unsafe_allow_html=True)
             
   
     elif choice == 'About':
