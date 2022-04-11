@@ -75,8 +75,8 @@ def main():
     
     
     for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories
-        temp_1 = f.replace('CSV/','') 
-        lista_csv.append(temp_1)
+        
+        lista_csv.append(f)
         
         temp2 = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
         temp2 = temp2.replace('.csv','').replace('_','  ')
@@ -143,7 +143,8 @@ def main():
         st.title(activities[4])
         st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
-        st.markdown(get_table_download_link(df, lista_csv[1]), unsafe_allow_html=True)
+        file = lista_csv[1].str.replace('CSV/','')
+        st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
             
   
     elif choice == 'About':
