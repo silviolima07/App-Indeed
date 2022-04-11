@@ -14,7 +14,7 @@ import sys
 
 import glob
 
-def download_link(df, texto1, texto2):
+def download_link(df):
     if isinstance(df,pd.DataFrame):
         object_to_download = df.to_csv(index=False)
 
@@ -31,6 +31,7 @@ def get_table_download_link(df):
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
     href = f'<a href="data:file/csv;base64,{b64}" download="myfile.csv">Download csv file</a>'
+    return href
 
 def make_clickable(link):
     # target _blank to open new window
