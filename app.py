@@ -139,7 +139,7 @@ def main():
         st.table(df)
         
         if st.button("Download"):
-            st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+            st.markdown(get_table_download_link(pd.read_csv(lista_csv[1])), unsafe_allow_html=True)
             
   
     elif choice == 'About':
