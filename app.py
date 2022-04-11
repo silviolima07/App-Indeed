@@ -130,7 +130,7 @@ def main():
         st.table(df)
         
         if st.button("Download"):
-            download_link(df, "Teste1", "Teste2")
+            download_link(df, "TESTEEEEEEEEEEEEEEEEEEEEEEEE", "TESTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
             
   
     elif choice == 'About':
