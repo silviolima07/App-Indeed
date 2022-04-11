@@ -58,8 +58,8 @@ def main():
     st.sidebar.image(scrap,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
-    file_csv = ['CSV/indeed_Cientista_de_dados.csv','CSV/indeed_Analista_de_dados.csv', 'CSV/indeed_Engenheiro_de_Machine_Learning.csv',
-                'CSV/indeed_Engenheiro_de_Dados.csv']
+    file_csv = ['CSV/indeed_CIENTISTA_DE_DADOS*.csv','CSV/indeed_ANALISTA_DE_DADOS*.csv', 'CSV/indeed_ENGENHEIRO_DE_MACHINE_LEARNING*.csv',
+                'CSV/indeed_ENGENHEIRO_DE_DADOS*.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
     #header_list = ["Cargo", "Empresa"]
