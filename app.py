@@ -147,11 +147,11 @@ def main():
         #st.write(" - incluído o link encurtado da vaga")
         st.subheader("by Silvio Lima")
         
-        if st.button("Linkedin"):
-            js = "window.open('https://www.linkedin.com/in/silviocesarlima/')"
-            html = '<img src onerror="{}">'.format(js)
-            div = Div(text=html)
-            st.bokeh_chart(div)
+        #if st.button("Linkedin"):
+        #    js = "window.open('https://www.linkedin.com/in/silviocesarlima/')"
+        #    html = '<img src onerror="{}">'.format(js)
+        #    div = Div(text=html)
+        #    st.bokeh_chart(div)
     
 
        
