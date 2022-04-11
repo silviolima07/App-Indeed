@@ -12,6 +12,7 @@ import base64
 
 import sys
 
+import glob
 
 def download_link(df, texto1, texto2):
     if isinstance(df,pd.DataFrame):
@@ -58,8 +59,18 @@ def main():
     st.sidebar.image(scrap,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
-    file_csv = ['CSV/indeed_CIENTISTA_DE_DADOS*.csv','CSV/indeed_ANALISTA_DE_DADOS*.csv', 'CSV/indeed_ENGENHEIRO_DE_MACHINE_LEARNING*.csv',
-                'CSV/indeed_ENGENHEIRO_DE_DADOS*.csv']
+    lista_csv= []
+    
+    
+    for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories 
+        lista_csv.append(f)
+     
+    st.write(lista_csv)
+
+    file_csv = ['CSV/indeed_CD*.csv',
+                'CSV/indeed_AD*.csv', 
+                'CSV/indeed_EML*.csv',
+                'CSV/indeed_ED*.csv']
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
     #header_list = ["Cargo", "Empresa"]
