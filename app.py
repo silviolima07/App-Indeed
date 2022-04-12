@@ -100,10 +100,10 @@ def main():
             temp = f.replace('indeed_ED_','').replace('.csv','').replace('CSV/','')
             lista_ED.append(temp)
 
-    st.write(lista_CD)
-    st.write(lista_AD)
-    st.write(lista_EML)
-    st.write(lista_ED)
+    #st.write(lista_CD)
+    #st.write(lista_AD)
+    #st.write(lista_EML)
+    #st.write(lista_ED)
 
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
@@ -136,38 +136,38 @@ def main():
         
     elif choice == activities[1]: # CD
         st.sidebar.image(aguia1,caption="", width=300)
-        df = pd.read_csv(lista_csv[0])
+        df = pd.read_csv(lista_CD[0])
         st.title(activities[1])
-        st.subheader("Vagas: "+str(lista_intervalo[0]))
+        st.subheader("Vagas: "+str(lista_CD[1]))
         st.table(df)
-        file = lista_csv[0].replace('CSV/','')
+        file = lista_CD[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
         
     elif choice == activities[2]: # AD
         st.sidebar.image(aguia2,caption="", width=300)
-        df = pd.read_csv(lista_csv[2])
+        df = pd.read_csv(lista_AD[0])
         st.title(activities[2])
-        st.subheader("Vagas: "+str(lista_intervalo[2]))
+        st.subheader("Vagas: "+str(lista_AD[1]))
         st.table(df)
-        file = lista_csv[2].replace('CSV/','')
+        file = lista_AD[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)   
    
     elif choice == activities[3]: # EML
         st.sidebar.image(aguia3,caption="", width=300)
-        df = pd.read_csv(lista_csv[1])
+        df = pd.read_csv(lista_EML[0])
         st.title(activities[3])
-        st.subheader("Vagas: "+str(lista_intervalo[1]))
+        st.subheader("Vagas: "+str(lista_EML[1]))
         st.table(df)
-        file = lista_csv[1].replace('CSV/','')
+        file = lista_EML[0].replace('CSV/','')
         st.markdown(get_table_download_link(df,file), unsafe_allow_html=True)
 
     elif choice == activities[4]: # ED
         st.sidebar.image(aguia4,caption="", width=300)
-        df = pd.read_csv(lista_csv[3])
+        df = pd.read_csv(lista_ED[0])
         st.title(activities[4])
-        st.subheader("Vagas: "+str(lista_intervalo[3]))
+        st.subheader("Vagas: "+str(lista_ED[1]))
         st.table(df)
-        file = lista_csv[3].replace('CSV/','')
+        file = lista_ED[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
             
   
