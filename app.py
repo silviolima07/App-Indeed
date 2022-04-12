@@ -70,19 +70,39 @@ def main():
     st.sidebar.image(scrap,caption="", width=300)
 
     activities = ["Home",'Cientista de Dados', 'Analista de Dados', 'Engenheiro de Machine Learning', 'Engenheiro de Dados',"About"]
-    lista_csv= []
+    lista_CD= []
+    lista_AD=[]
+    lista_EML=[]
+    lista_ED=[]
     lista_intervalo = []
     
     
     for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories
-        
-        lista_csv.append(f)
-        
-        temp2 = f.replace('CSV/indeed_CD_','').replace('CSV/indeed_AD_','').replace('CSV/indeed_EML_','').replace('CSV/indeed_ED_','')
-        temp2 = temp2.replace('.csv','').replace('_','  ')
-        lista_intervalo.append(temp2)
-    #st.write(lista_intervalo)
-    #st.write(lista_csv)
+
+        if f.startswith('indeed_CD'):
+            lista_CD.append(f)
+            temp = f.replace('indeed_CD_','').replace('.csv','')
+            lista_CD.append(temp)
+         
+        if f.startswith('indeed_AD'):
+            lista_AD.append(f)
+            temp = f.replace('indeed_AD_','').replace('.csv','')
+            lista_AD.append(temp)
+
+        if f.startswith('indeed_EML'):
+            lista_EML.append(f)
+            temp = f.replace('indeed_EML_','').replace('.csv','')
+            lista_EML.append(temp)
+
+        if f.startwith('indeed_ED'):
+            lista_ED.append(f)
+            temp = f.replace('indeed_ED_','').replace('.csv','')
+            lista_ED.append(temp)
+
+    st.write(lista_CD)
+    st.write(lista_AD)
+    st.write(lista_EML)
+    st.write(lista_ED)
 
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
