@@ -80,22 +80,22 @@ def main():
     for f in glob.iglob("CSV/*.csv"): # generator, search immediate subdirectories
         st.write(f)
 
-        if str(f).startswith('indeed_CD'):
+        if str(f).startswith('CSV/indeed_CD'):
             lista_CD.append(f)
             temp = f.replace('indeed_CD_','').replace('.csv','')
             lista_CD.append(temp)
          
-        if f.startswith('indeed_AD'):
+        if f.startswith('CSV/indeed_AD'):
             lista_AD.append(f)
             temp = f.replace('indeed_AD_','').replace('.csv','')
             lista_AD.append(temp)
 
-        if f.startswith('indeed_EML'):
+        if f.startswith('CSV/indeed_EML'):
             lista_EML.append(f)
             temp = f.replace('indeed_EML_','').replace('.csv','')
             lista_EML.append(temp)
 
-        if f.startswith('indeed_ED'):
+        if f.startswith('CSV/indeed_ED'):
             lista_ED.append(f)
             temp = f.replace('indeed_ED_','').replace('.csv','')
             lista_ED.append(temp)
