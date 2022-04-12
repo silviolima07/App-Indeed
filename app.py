@@ -94,7 +94,7 @@ def main():
             temp = f.replace('indeed_EML_','').replace('.csv','')
             lista_EML.append(temp)
 
-        if f.startwith('indeed_ED'):
+        if f.startswith('indeed_ED'):
             lista_ED.append(f)
             temp = f.replace('indeed_ED_','').replace('.csv','')
             lista_ED.append(temp)
