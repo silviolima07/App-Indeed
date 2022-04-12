@@ -82,22 +82,22 @@ def main():
 
         if str(f).startswith('CSV/indeed_CD'):
             lista_CD.append(f)
-            temp = f.replace('indeed_CD_','').replace('.csv','')
+            temp = f.replace('indeed_CD_','').replace('.csv','').replace('CSV/','')
             lista_CD.append(temp)
          
         if f.startswith('CSV/indeed_AD'):
             lista_AD.append(f)
-            temp = f.replace('indeed_AD_','').replace('.csv','')
+            temp = f.replace('indeed_AD_','').replace('.csv','').replace('CSV/','')
             lista_AD.append(temp)
 
         if f.startswith('CSV/indeed_EML'):
             lista_EML.append(f)
-            temp = f.replace('indeed_EML_','').replace('.csv','')
+            temp = f.replace('indeed_EML_','').replace('.csv','').replace('CSV/','')
             lista_EML.append(temp)
 
         if f.startswith('CSV/indeed_ED'):
             lista_ED.append(f)
-            temp = f.replace('indeed_ED_','').replace('.csv','')
+            temp = f.replace('indeed_ED_','').replace('.csv','').replace('CSV/','')
             lista_ED.append(temp)
 
     st.write(lista_CD)
