@@ -133,20 +133,20 @@ def main():
    
     elif choice == activities[3]: # EML
         st.sidebar.image(aguia3,caption="", width=300)
-        df = pd.read_csv(lista_csv[0])
+        df = pd.read_csv(lista_csv[1])
         st.title(activities[3])
-        st.subheader("Vagas: "+str(lista_intervalo[0]))
+        st.subheader("Vagas: "+str(lista_intervalo[1]))
         st.table(df)
-        file = lista_csv[0].replace('CSV/','')
+        file = lista_csv[1].replace('CSV/','')
         st.markdown(get_table_download_link(df,file), unsafe_allow_html=True)
 
     elif choice == activities[4]: # ED
         st.sidebar.image(aguia4,caption="", width=300)
-        df = pd.read_csv(lista_csv[1])
+        df = pd.read_csv(lista_csv[0])
         st.title(activities[4])
-        st.subheader("Vagas: "+str(lista_intervalo[1]))
+        st.subheader("Vagas: "+str(lista_intervalo[0]))
         st.table(df)
-        file = lista_csv[1].replace('CSV/','')
+        file = lista_csv[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
             
   
