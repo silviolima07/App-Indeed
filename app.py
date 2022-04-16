@@ -228,29 +228,20 @@ def main():
         word, count_word = freq(string_desc)
         #
 
-        # Create and generate a word cloud image:
-        wordcloud = WordCloud().generate(string_desc)
-
-        # Display the generated image:
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
-        st.pyplot()
-
         # Converter para dict, sendo chave a word e valor a frequencia da palavra
-        #data = dict(zip(word, count_word ))
+        data = dict(zip(word, count_word ))
         #print(data)
         #
         # Cria a wordcloud baseada nos valores no dicionario gerado
-        #wc = WordCloud(width=800, height=400, max_words=200).generate_from_frequencies(data)
+        wc = WordCloud(width=800, height=400, max_words=200).generate_from_frequencies(data)
         #
-        #cargo = choice
+        cargo = choice
         # Plota a wordcloud gerada
-        #plt.figure(figsize=(10, 10))
-        #plt.imshow(wc, interpolation='bilinear')
-        #plt.axis('off')
-        #plt.title("Wordcloud da Descrição\n "+cargo)
-        #plt.show()
+        plt.figure(figsize=(10, 10))
+        plt.imshow(wc, interpolation='bilinear')
+        plt.axis('off')
+        plt.title("Wordcloud da Descrição\n "+cargo)
+        plt.show()
 
         
     elif choice == 'About':
