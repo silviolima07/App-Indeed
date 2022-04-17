@@ -14,6 +14,52 @@ import sys
 
 import glob
 
+import re
+
+#from wordcloud import WordCloud
+
+#import matplotlib.pyplot as plt
+
+#import nltk
+
+def clean_desc(df):
+    desc = []
+    for line in df.Descrição:
+        words = line.replace('Postado', '').replace('há','').replace(',','').replace('dias','').replace('+ ','').replace('·','').lower().replace('(','').replace(')','')
+        line = re.sub("\d+", "", words).replace('employerativa','').replace('atrás','').replace(';','').replace('–…','').replace('…','').strip().replace('.','')
+        temp = "".join(line)
+        desc.append(temp)   
+    return desc
+
+# Python3 code to find frequency of each word
+# function for calculating the frequency
+def freq(str):
+    word = []
+    count_word  = []
+  
+    # break the string into list of words
+    str_list = str.split()
+  
+    # gives set of unique words
+    unique_words = set(str_list)
+
+    # Lib de palavras stopwords
+    nltk.download('stopwords')
+    #
+    stopwords = nltk.corpus.stopwords.words('portuguese')
+    
+    # Eliminar de lista unique_words as palavras irrelevantes tipo: de, a, em
+    dataset = unique_words
+    lista_sem_stopwords = [word for word in dataset if word not in stopwords]
+    
+    for words in lista_sem_stopwords :
+        count = str_list.count(words)
+        #print('Frequency of ', words , 'is :', count)
+        word.append(words)
+        count_word.append(count)
+    return word, count_word      
+
+
 def download_link(df):
     if isinstance(df,pd.DataFrame):
         object_to_download = df.to_csv(index=False)
@@ -170,7 +216,34 @@ def main():
         file = lista_ED[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
             
-  
+        
+        # Remover caracteres, palavras indesejados na coluna Descrição do dataset lido
+        #desc = clean_desc(df)
+        #
+
+        # Une todos itens/palavras da lista com a descrição numa linha unica
+        #string_desc = ' '.join([str(item) for item in desc])
+
+        # Cria duas listas, uma lista word com todas palavras e uma lista com a frequencia dessas palavras na descrição
+        #word, count_word = freq(string_desc)
+        #
+
+        # Converter para dict, sendo chave a word e valor a frequencia da palavra
+        #data = dict(zip(word, count_word ))
+        #print(data)
+        #
+        # Cria a wordcloud baseada nos valores no dicionario gerado
+        #wc = WordCloud(width=800, height=400, max_words=200).generate_from_frequencies(data)
+        #
+        #cargo = choice
+        # Plota a wordcloud gerada
+        #plt.figure(figsize=(10, 10))
+        #plt.imshow(wc, interpolation='bilinear')
+        #plt.axis('off')
+        #plt.title("Wordcloud da Descrição\n "+cargo)
+        #plt.show()
+
+        
     elif choice == 'About':
         #st.sidebar.image(about,caption="", width=300, height= 200)
         st.subheader("Built with Streamlit")
