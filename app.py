@@ -243,6 +243,8 @@ def main():
         #plt.title("Wordcloud da Descrição\n "+cargo)
         #plt.show()
 
+
+
         
     elif choice == 'About':
         #st.sidebar.image(about,caption="", width=300, height= 200)
