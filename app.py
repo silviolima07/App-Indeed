@@ -198,10 +198,6 @@ def main():
             temp = f.replace('indeed_ED_','').replace('.csv','').replace('CSV/','')
             lista_ED.append(temp)
 
-    #st.write(lista_CD)
-    #st.write(lista_AD)
-    #st.write(lista_EML)
-    #st.write(lista_ED)
 
     choice = st.sidebar.selectbox("Selecione uma opção",activities)
 
@@ -234,7 +230,7 @@ def main():
         col22.image(aguia4, width=300)
     
     elif choice == activities[1]: # Wordcloud
-        st.sidebar.image(wc2,caption="", width=300)
+        st.sidebar.image(wc1,caption="", width=300)
 
         
         if st.button('Cientista de Dados'):
