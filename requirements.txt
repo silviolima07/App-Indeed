@@ -1,4 +1,5 @@
--i https://pypi.org/simple
+matplotlib==3.3.1
+click==7.1.2
 numpy==1.19.5
 packaging==20.8
 pillow==8.1.0
@@ -10,5 +11,6 @@ tornado==6.1
 typing-extensions==3.7.4.3
 jinja2==3.0.1
 Bokeh==2.2.2
-streamlit==0.80.0
+streamlit==0.81.0
 wordcloud==1.8.1
+nltk==3.5

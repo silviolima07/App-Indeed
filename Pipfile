@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 bokeh = "*"
+matplotlib = "*"
+wordcloud = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.6"
