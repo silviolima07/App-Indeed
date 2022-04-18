@@ -230,7 +230,7 @@ def main():
         col22.image(aguia4, width=300)
     
     elif choice == activities[1]: # Wordcloud
-        st.sidebar.image(wc1,caption="", width=300)
+        st.sidebar.image(wc2,caption="", width=300)
 
         
         if st.button('Cientista de Dados'):
