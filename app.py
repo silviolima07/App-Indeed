@@ -312,10 +312,8 @@ def main():
         #plt.axis('off')
         #plt.title("Wordcloud da Descrição\n "+cargo)
         #plt.show()
-=======
         
         
->>>>>>> 6831e5c733e09f1042a749c0cd486126e4b26bd8
 
         
     elif choice == 'About':
