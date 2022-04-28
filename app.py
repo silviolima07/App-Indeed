@@ -28,7 +28,6 @@ import re
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-
 def clean_desc(df):
     desc = []
     for line in df.Descrição:
