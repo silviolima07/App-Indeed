@@ -281,7 +281,7 @@ def main():
         st.sidebar.image(aguia4,caption="", width=300)
         df = pd.read_csv(lista_EML[0])
         st.title(activities[5])
-        st.subheader("Vagas: "+str(lista_ED[1]))
+        st.subheader("Vagas: "+str(lista_EML[1]))
         st.table(df)
         file = lista_EML[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
