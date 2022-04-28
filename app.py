@@ -279,11 +279,11 @@ def main():
     elif choice == activities[5]: # EML
     
         st.sidebar.image(aguia4,caption="", width=300)
-        df = pd.read_csv(lista_ED[0])
+        df = pd.read_csv(lista_EML[0])
         st.title(activities[5])
         st.subheader("Vagas: "+str(lista_ED[1]))
         st.table(df)
-        file = lista_ED[0].replace('CSV/','')
+        file = lista_EML[0].replace('CSV/','')
         st.markdown(get_table_download_link(df, file), unsafe_allow_html=True)
         
         
